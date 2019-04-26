@@ -13,4 +13,6 @@ require ROOT_DIR . '/app/config/app.php';
 // Additional requires (this can be also done with conposer.json)
 require ROOT_DIR . '/core/functions/form.php';
 
+$app = new \App\App();
+
 
