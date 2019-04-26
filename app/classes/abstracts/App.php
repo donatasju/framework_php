@@ -15,28 +15,28 @@ abstract class App {
      * Responsible for connecting to MySQL database
      * @var \Core\Database\Connection
      */
-    static $db_conn;
+    public static $db_conn;
 
     /**
      * Database Schema
      * Responsible for database schema in MySQL
      * @var \Core\Database\Schema
      */
-    static $db_schema;
+    public static $db_schema;
 
     /**
      * User Repository
      * Handles user data
      * @var \Core\User\Repository
      */
-    static $user_repo;
+    public static $user_repo;
 
     /**
      * Session
      * Handles login operations
      * @var \Core\User\Session
      */
-    static $session;
+    public static $session;
   
     /**
      * Konstruktoriaus paskirtis nustatyti 
