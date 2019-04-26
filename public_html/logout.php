@@ -1,6 +1,8 @@
 <?php
 require_once '../bootloader.php';
 
+use \App\App;
+
 $form = [
     'pre_validate' => [],
     'fields' => [],
@@ -16,7 +18,7 @@ $form = [
     ]
 ];
 
-if (\App\App::$session->isLoggedIn()) {
+if (App::$session->isLoggedIn()) {
     if (!empty($_POST)) {
         $safe_input = get_safe_input($form);
         $form_success = validate_form($safe_input, $form);
@@ -25,7 +27,7 @@ if (\App\App::$session->isLoggedIn()) {
         }
     }
 }
-if (!\App\App::$session->isLoggedIn()) {
+if (!App::$session->isLoggedIn()) {
     header('Location: login.php');
     exit();
 }

@@ -1,5 +1,8 @@
 <?php
 require_once '../bootloader.php';
+
+use \App\App;
+
 $form = [
     'pre_validate' => [],
     'fields' => [
@@ -32,7 +35,7 @@ $form = [
         'full_name' => [
             'label' => 'Full Name',
             'type' => 'text',
-            'placeholder' => 'Ernestas Zidokas',
+            'placeholder' => 'Name Lastname',
             'validate' => [
                 'validate_not_empty',
                 'validate_contains_space',
@@ -115,7 +118,7 @@ function form_success($safe_input, $form) {
         'photo' => $safe_input['photo'],
         'is_active' => true
     ]);
-    \App\App::$user_repo->insert($user);
+    App::$user_repo->insert($user);
 
 }
 function validate_form_file(&$safe_input, &$form) {
@@ -146,7 +149,7 @@ if (!empty($_POST)) {
         ]);
     }
 }
-//      \App\App::$user_repo->deleteAll();
+//      App::$user_repo->deleteAll();
 ?>
 <html>
 
@@ -160,10 +163,8 @@ if (!empty($_POST)) {
             <?php require '../core/views/form.php'; ?>
             <?php if (isset($success_msg)): ?>
                 <h3><?php print $success_msg; ?></h3>
-<?php endif; ?>
-
+            <?php endif; ?>
         </section>
-
     </body>
 </html>
 

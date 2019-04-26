@@ -1,5 +1,8 @@
 <?php
 require_once '../bootloader.php';
+
+use \App\App;
+
 $form = [
     'pre_validate' => [],
     'fields' => [
