@@ -10,7 +10,6 @@ Class User extends Abstracts\User {
     public function __construct($data = null) {
         if (!$data) {
             $this->data = [
-                'username' => null,
                 'email' => null,
                 'full_name' => null,
                 'age' => null,

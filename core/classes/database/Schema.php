@@ -10,6 +10,8 @@ class Schema extends \Core\Database\Abstracts\Schema {
         $this->name = $name;
         $this->pdo = $c->getPDO();
         $this->connection = $c;
+        
+        $this->init();
     }
 
     public function create() {

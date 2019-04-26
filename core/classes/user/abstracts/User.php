@@ -40,10 +40,6 @@ abstract class User {
 
     abstract public function setPassword(string $password);
 
-    public function setUserName(string $name) {
-        $this->data['username'] = $name;
-    }
-
     public function setEmail(string $email) {
         $this->data['email'] = $email;
     }
@@ -77,10 +73,6 @@ abstract class User {
 
     public function setPhoto(string $photo) {
         $this->data['photo'] = $photo;
-    }
-
-    public function getUsername() {
-        return $this->data['username'];
     }
 
     public function getEmail() {
@@ -123,7 +115,6 @@ abstract class User {
     }
 
     public function setData(array $data) {
-        $this->setUsername($data['username'] ?? '');
         $this->setEmail($data['email'] ?? '');
         $this->setFullName($data['full_name'] ?? '');
         $this->setAge($data['age'] ?? null);

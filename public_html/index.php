@@ -2,23 +2,25 @@
 require_once '../bootloader.php';
 
 $connection = new \Core\Database\Connection(DB_CREDENTIALS);
-
-$pdo = $connection->getPDO();
 $schema = new \Core\Database\Schema($connection, DB_NAME);
-$schema->init();
 
-$model_user = new \Core\User\Repository($connection);
-$model_user->insertIfNotExists([
-    'email' => 'valdau@nx.com',
+$repository = new \Core\User\Repository($connection);
+
+//READY
+
+$user = new \Core\User\User([
+    'email' => 'valdau@nxxsda.comm',
     'password' => 'bbd',
     'full_name' => 'Zanas Vandamas',
+    'account_type' => \Core\User\User::ACCOUNT_TYPE_USER,
+    'is_active' => true,
     'age' => 26,
     'gender' => 'm'
-        ], [
-    'email'
-]);
+        ]);
 
-$users = $model_user->load();
+$success = $repository->insert($user);
+var_dump('success', $success);
+$users = $repository->loadAll();
 ?>
 <html>
     <head>
@@ -27,12 +29,10 @@ $users = $model_user->load();
     <body>
         <?php foreach ($users as $user): ?>
             <ul>
-                <?php foreach ($user as $col => $value): ?>
-                    <li>
-                        <b><?php print $col; ?></b>
-                        <i><?php print $value; ?></i>
-                    </li>
-                <?php endforeach; ?>
+                <li>
+                    <b>Email:</b>
+                    <i><?php print $user->getEmail(); ?></i>
+                </li>
             </ul>
         <?php endforeach; ?>
     </body>
