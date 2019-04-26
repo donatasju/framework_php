@@ -1,6 +1,7 @@
 <?php
 require_once '../bootloader.php';
 $form = [
+    'pre_validate' => [],
     'fields' => [
         'email' => [
             'label' => 'Email',
@@ -37,7 +38,7 @@ $form = [
     ]
 ];
 function form_fail($safe_input, $form) {
-    $cookie = new Core\Cookie('attempts_count');
+    $cookie = new Core\Utils\Cookie('attempts_count');
     $data = $cookie->read();
     $data['attempts'] = isset($data['attempts']) ? $data['attempts'] + 1 : 1;
     $expires_in = $data['attempts'] < 3 ? 3600 : 30;
