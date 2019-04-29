@@ -19,7 +19,6 @@ $user = new \Core\User\User([
         ]);
 
 $success = $repository->insert($user);
-var_dump('success', $success);
 $users = $repository->loadAll();
 ?>
 <html>
