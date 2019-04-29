@@ -1,38 +1,9 @@
 <?php
 require_once '../bootloader.php';
 
-$connection = new \Core\Database\Connection(DB_CREDENTIALS);
-$schema = new \Core\Database\Schema($connection, DB_NAME);
+//$controller = new \Core\Page\Controller();
+//print $controller->onRender();
 
-$repository = new \Core\User\Repository($connection);
+$controller2 = new \App\Controller\Home();
 
-//READY
-
-$user = new \Core\User\User([
-    'email' => 'valdau@nxxsda.comm',
-    'password' => 'bbd',
-    'full_name' => 'Zanas Vandamas',
-    'account_type' => \Core\User\User::ACCOUNT_TYPE_USER,
-    'is_active' => true,
-    'age' => 26,
-    'gender' => 'm'
-        ]);
-
-$success = $repository->insert($user);
-$users = $repository->loadAll();
-?>
-<html>
-    <head>
-        <title>Tyler`s Framework</title>
-    </head>
-    <body>
-        <?php foreach ($users as $user): ?>
-            <ul>
-                <li>
-                    <b>Email:</b>
-                    <i><?php print $user->getEmail(); ?></i>
-                </li>
-            </ul>
-        <?php endforeach; ?>
-    </body>
-</html>
+print $controller2->onRender();

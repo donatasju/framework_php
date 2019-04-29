@@ -1,4 +1,4 @@
-﻿# Framework: Database Ready
- ## To Do: User Repository
+﻿# Framework: Introducing Controller & View
+ ## To Do: Understand It
 
 

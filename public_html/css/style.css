@@ -1,13 +1,7 @@
-.container {
-    display: flex;
-    justify-content: center; 
-}
-
-.forma {
-    border: 1px solid black;
+form {
+    max-width: 300px;
     text-align: center;
-    padding: 10px;
-}
+}   
 
 form input {
     display: block;
@@ -22,13 +16,4 @@ form select {
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
-}
-
-.author {
-    display: none;
-}
-
-.line:hover .author {
-    display: inline-block;
-    margin-left: 5px;
 }

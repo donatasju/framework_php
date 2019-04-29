@@ -64,12 +64,9 @@ class Repository extends \Core\User\Abstracts\Repository {
     }
 
     public function exists($email) {
-        $rows = $this->model->load([
+        $this->model->exists([
             'email' => $email
         ]);
-        if ($rows) {
-            return true;
-        }
     }
 
 }
