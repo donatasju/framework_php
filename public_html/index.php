@@ -9,8 +9,25 @@ require_once '../bootloader.php';
 //print $controller2->onRender();
 
 $data = [
-    'index.php' => 'index'
+    [
+        'link' => 'index.php',
+        'title' => 'index'
+    ],
+    [
+        'link' => 'register.php',
+        'title' => 'register'
+    ],
+    [
+        'link' => 'login.php',
+        'title' => 'login'
+    ],
+    [
+        'link' => 'logout.php',
+        'title' => 'logout'
+    ]
 ];
 $navigation = new App\View\Navigation($data);
+//$navigation->addLink('index.php', 'fokinghell');
+$navigation->removeLinks();
 
 print $navigation->render();

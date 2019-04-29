@@ -48,7 +48,7 @@ function form_fail($safe_input, $form) {
     $cookie->save($data, $expires_in);
 }
 function validate_login(&$safe_input, &$form) {
-    $status = \App\App::$session->login($safe_input['email'], $safe_input['password']);
+    $status = App::$session->isLoggedIn($safe_input['email'], $safe_input['password']);
     switch ($status) {
         case Core\User\Session::LOGIN_SUCCESS:
             return true;
