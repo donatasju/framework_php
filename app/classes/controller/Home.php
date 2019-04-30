@@ -6,6 +6,7 @@ class Home extends \App\Controller\Base {
 
     public function __construct() {
         parent::__construct();
+        
         $content = [
             'title' => 'Kitas title',
             'subtitle' => 'subtitle'

@@ -5,6 +5,7 @@ namespace App\Controller;
 class Base extends \Core\Page\Controller {
     public function __construct() {
         parent::__construct();
+        
         $navigation = [
             [
                 'link' => 'index.php',

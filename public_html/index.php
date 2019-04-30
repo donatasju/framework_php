@@ -7,7 +7,6 @@ require_once '../bootloader.php';
 //$controller2 = new \App\Controller\Home();
 //
 //print $controller2->onRender();
-
 //$data = [
 //    [
 //        'link' => 'index.php',
@@ -31,9 +30,16 @@ require_once '../bootloader.php';
 //
 //print $navigation->render();
 
-$home = new App\Controller\Home();
 
-print $home->onRender();
 
+if ($_SERVER['REQUEST_URI'] == '/about.php') {
+    $class = 'App\Controller\About';
+} else {
+    $class = 'App\Controller\Home';
+}
+
+$nahui = new $class();
+
+print $nahui->onRender();
 
 
