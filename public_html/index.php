@@ -38,8 +38,8 @@ if ($_SERVER['REQUEST_URI'] == '/about') {
     $class = 'App\Controller\Home';
 }
 
-$nahui = new $class();
+$controller = new $class();
 
-print $nahui->onRender();
+print $controller->onRender();
 
 
