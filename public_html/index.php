@@ -32,7 +32,7 @@ require_once '../bootloader.php';
 
 
 
-if ($_SERVER['REQUEST_URI'] == '/about.php') {
+if ($_SERVER['REQUEST_URI'] == '/about') {
     $class = 'App\Controller\About';
 } else {
     $class = 'App\Controller\Home';

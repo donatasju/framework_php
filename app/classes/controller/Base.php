@@ -8,11 +8,11 @@ class Base extends \Core\Page\Controller {
         
         $navigation = [
             [
-                'link' => 'index.php',
+                'link' => 'index',
                 'title' => 'INDEX'
             ],
             [
-                'link' => 'about.php',
+                'link' => 'about',
                 'title' => 'ABOUT'
             ]
         ];
