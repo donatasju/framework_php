@@ -25,7 +25,7 @@
                 <script type="text/javascript" src="<?php print $script; ?>"></script>
             <?php endforeach; ?>
         <?php endif; ?>        
-        
+
         <!-- Header -->        
         <?php if ($view['header'] ?? false): ?>
             <div class="header-wrapper">

@@ -1,7 +1,9 @@
-<?php foreach ($view as $footer): ?>
-    <h1><?php print $footer['name']; ?></h1>
-    <h1><?php print $footer['contacts']; ?></h1>
-<?php endforeach; ?>
-
-
-
+<div class="footer">
+        <?php foreach ($view as $item): ?>
+            <div>
+                <a href="<?php print $item['link']; ?>">
+                    <?php print $item['title']; ?>
+                </a>
+            </div>
+        <?php endforeach; ?>
+</div>

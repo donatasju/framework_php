@@ -10,6 +10,9 @@ require ROOT_DIR . '/vendor/autoload.php';
 // Load server-specific configuration
 require ROOT_DIR . '/app/config/app.php';
 
+// Register site routs
+require ROOT_DIR . '/app/config/routes.php';
+
 // Additional requires (this can be also done with conposer.json)
 require ROOT_DIR . '/core/functions/form.php';
 require ROOT_DIR . '/app/functions/form.php';

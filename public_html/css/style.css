@@ -1,7 +1,17 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 form {
-    max-width: 300px;
+    margin: 20px auto;
+    max-width: 500px;
     text-align: center;
-}   
+}
 
 form input {
     display: block;
@@ -16,4 +26,71 @@ form select {
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.input-radio-container {
+    width: 100%;
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.input-radio-container label > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+}
+
+.header-wrapper,
+.content-wrapper,
+.footer-wrapper {
+    padding: 20px 10px;
+    width: 100%;
+}
+.header-wrapper {
+    background-color: gold;
+}
+
+.header-wrapper div.navigation ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+.header-wrapper div.navigation ul li {
+    margin: 0 20px;
+}
+
+.content-wrapper {
+    color: white;
+    background-color: green;
+    text-align: center;
+}
+
+.footer-wrapper {
+    background-color: red;
+    text-align: center;
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type=radio] + img {
+  cursor: pointer;
+}
+
+[type=radio]:checked + img {
+  outline: 2px solid #f00;
+}
+
+img {
+  height: 100px;
+  width: 100px;
 }

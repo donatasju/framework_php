@@ -15,7 +15,9 @@ class Controller {
         // Init Page Defaults
         $this->page = [
             'title' => 'Durden\'s Framework v1.0!',
-            'stylesheets' => [],
+            'stylesheets' => [
+                'css/style.css'
+            ],
             'scripts' => [
                 'head' => [],
                 'body_start' => [],
@@ -23,7 +25,7 @@ class Controller {
             ],
             'header' => false,
             'footer' => false,
-            'content' => 'This is core controller!'
+            'content' => 'This is core controller! '
             . 'You need to extend this class in your App!',
         ];
     }

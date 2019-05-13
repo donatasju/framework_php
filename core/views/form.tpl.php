@@ -1,5 +1,5 @@
 <form method="POST" enctype="multipart/form-data">
-    <?php foreach ($form['fields'] as $field_id => $field): ?>
+    <?php foreach ($view['fields'] as $field_id => $field): ?>
         <label>
             <span><?php print $field['label']; ?></span>
 
@@ -22,8 +22,17 @@
                         <option value="<?php print $option_id; ?>"><?php print $option_label; ?></option>
                     <?php endforeach; ?>
                 </select>
+            <?php elseif ($field['type'] == 'radio'): ?>
+                <!-- Radio field -->
+                <div class="input-radio-container">
+                    <?php foreach ($field['values'] as $value): ?>
+                        <label>
+                            <input name="<?php print $field_id; ?>" type="<?php print $field['type']; ?>" value="<?php print $value; ?>">
+                            <img src="<?php print $field['img'][$value]; ?>">
+                        </label>
+                    <?php endforeach; ?>
+                </div>
             <?php endif; ?>
-
             <!-- Errors -->
             <?php if (isset($field['error_msg'])): ?>
                 <p class="error"><?php print $field['error_msg']; ?></p>
@@ -31,12 +40,12 @@
         </label>
     <?php endforeach; ?>
 
-    <?php if (isset($form['error_msg'])): ?>
-        <p class="error"><?php print $form['error_msg']; ?></p>
+    <?php if (isset($view['error_msg'])): ?>
+        <p class="error"><?php print $view['error_msg']; ?></p>
     <?php endif; ?>
 
     <!-- Buttons -->
-    <?php foreach ($form['buttons'] as $button_id => $button): ?>
+    <?php foreach ($view['buttons'] as $button_id => $button): ?>
         <button name="action" value="<?php print $button_id; ?>">
             <?php print $button['text']; ?>
         </button>

@@ -81,7 +81,9 @@ class Model extends \Core\Database\Abstracts\Model {
         }
 
         try {
-            return $query->execute();
+            $query->execute();
+            
+            return $query->fetchColumn();
         } catch (PDOException $e) {
             throw new Exception(strtr(
                             'Framework database error: Failed to check record existance from table: @e',
@@ -97,13 +99,13 @@ class Model extends \Core\Database\Abstracts\Model {
         if ($conditions) {
             $sql = strtr("UPDATE @table SET @col WHERE @condition", [
                 '@table' => SQLBuilder::table($this->table_name),
-                '@col' => Core\Database\SQLBuilder::columnsEqualBinds($row_columns),
-                '@condition' => Core\Database\SQLBuilder::columnsEqualBinds($cond_columns, ' AND ', 'c_'),
+                '@col' => SQLBuilder::columnsEqualBinds($row_columns),
+                '@condition' => SQLBuilder::columnsEqualBinds($cond_columns, ' AND ', 'c_'),
             ]);
         } else {
             $sql = strtr("UPDATE @table SET @col", [
                 '@table' => SQLBuilder::table($this->table_name),
-                '@col' => Core\Database\SQLBuilder::columnsEqualBinds($row_columns)
+                '@col' => SQLBuilder::columnsEqualBinds($row_columns)
             ]);
         }
 
